@@ -43,7 +43,7 @@ public class User {
     @Type(type = "com.example.jpademo.entities.ToTimestamp")
     private LocalDateTime updatedAt;
 
-    @ManyToMany(mappedBy = "pms")
+    @ManyToMany(mappedBy = "pms", fetch = FetchType.LAZY)
     private Set<Project> projects = new LinkedHashSet<>();
 
     @Override
